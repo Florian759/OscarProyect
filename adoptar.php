@@ -5,9 +5,10 @@
 
     $id = $_REQUEST["id"];
 
-    $update = "UPDATE perros SET id = {$userID} WHERE perros_id LIKE {$id}";
+    $update = "INSERT INTO adopciones (usuario_id, perro_id ) VALUES ({$userID}, {$id})";
+    
     mysqli_query($conexion, $update);
-    echo $update;
+
 
     header("Location: ./index.php");
 

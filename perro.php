@@ -39,7 +39,7 @@ $query = mysqli_query($conexion, $select);
 							<p>' . $row["description"] . '</p>
 							';
 				if ($userID != null && $row["id_usuario"] == null) {
-					echo '<a href="./adoptar.php?id=' . $row["id_usuario"] . '" class="title-font"><button class="button-primary">Adoptar</button></a>';
+					echo '<a href="./adoptar.php?id=' . $row["id"] . '" class="title-font"><button class="button-primary">Adoptar</button></a>';
 				}
 				echo '
 						</div>
