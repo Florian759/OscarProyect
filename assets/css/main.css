@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+body {
+    margin: 0px;
+    background-color: #e7e6ef;
+}
+
+.main-header {
+    background-color: #4D4C7D;
+    height: 8vh;
+    width: 96%;
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.main-header .logo {
+    width: 75px;
+}
+
+.main-header .logo a img {
+    width: 100%;
+}
+
+.main-header nav {
+    display: flex;
+}
+
+.main-header nav a {
+    display: inline-block;
+    margin-left: 30px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 1.4rem;
+}
+
+.main-header nav a:hover {
+    opacity: 1;
+}
+
+.main-header .loginAndRegister {
+    display: flex;
+}
+
+.main-header .loginAndRegister button {
+    margin: 0 10px;
+}
+
+.main-header .loginAndRegister button a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.button-primary {
+    background-color: #F23084;
+    border-radius: 50px;
+    color: #fff;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 3px solid transparent;
+    transition: border 0.4s;
+}
+
+.button-primary:hover {
+    border: 3px solid #fff;
+}
+
+.button-primary * {
+    opacity: 1;
+}
+
+.button-secondary {
+    background-color: transparent;
+    border-radius: 50px;
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+    border: 3px solid transparent;
+    transition: border 0.4s;
+}
+
+.button-secondary:hover {
+    border: 3px solid #fff;
+}
+
+.button-secondary * {
+    opacity: 1;
+}
+
+.main-page {
+    width: 100%;
+    min-height: 80vh; 
+}
+
+.main-page .content {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.main-page .content .row {
+    display: block;
+    width: 90%;
+    margin: auto;
+
+}
+
+.main-page .content .row ul {
+    list-style: none;
+}
+
+.main-page .content .row ul a {
+    text-decoration: none;
+    color: #000;
+}
+
+.main-page .content .row ul li {
+    width: calc(100%/5);
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    text-decoration: none;
+    background-color: #fff;
+    padding-bottom: 20px;
+    border: 3px solid #e7e6ef;
+}
+
+.main-page .content .row ul li:hover {
+    width: calc(100%/5);
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    text-decoration: none;
+    background-color: #fff;
+    padding-bottom: 20px;
+    border: 3px solid #4D4C7D;
+}
+
+.main-page .content .row ul li img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.main-page .content .row ul li p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.main-page .content .info {
+    width: 80%;
+    margin: auto;
+}
+
+.main-page .content .info .toleft,
+.main-page .content .info .toright {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main-page .content .info .toleft {
+    width: 30%;
+    margin-right: 50px;
+}
+
+.main-page .content .info .toright {
+    width: 60%;
+}
+
+.main-page .content .info h1,
+.main-page .content .info h2,
+.main-page .content .info span {
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.main-page .content .info h1 {
+    color: #4D4C7D;
+    font-size: 2em;
+}
+
+.main-page .content .info h2 {
+    color: #363062;
+    font-size: 1.4em;
+}
+
+.main-page .content .info .toright span {
+    opacity: 0.5;
+}
+
+.main-page .content .info input[type="text"],
+.main-page .content .info input[type="password"] {
+    width: 25%;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #363062;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-page .content .info .more-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+button {
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.main-page .content .info p {
+    margin-top: 50px;
+    letter-spacing: 0.5px;
+    font-size: 1.3em;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.main-page .content .info ul {
+    list-style: none;
+}
+
+.main-page .content .info ul li {
+    letter-spacing: 0.5px;
+    font-size: 1.3em;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.main-page .content .info img {
+    width: 100%;
+}
+
+.main-page .content .row ul li span {
+    font-family: 'Akaya Telivigala', cursive;
+    line-height: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+    opacity: 0.5;
+    font-size: 1.05em;
+}
+
+footer {
+    width: 100%;
+    border-top: 20px solid #827397;
+    background-color: #363062;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 7.4vh
+}
+
+footer * {
+    color: #fff;
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: center;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_iframe {
+    height: 400px;
+}
+
+.error_message {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background: red;
+    color: #fff;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.error_message * {
+    margin-left: 20px;
+}
+
+.ok_message {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background: green;
+    color: #fff;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.ok_message * {
+    margin-left: 20px;
+}
+
+.adopted {
+    padding-top: 5px;
+    width: 20%;
+    margin: auto;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    background: blueviolet;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.adopted * {
+    margin-left: 20px;
+}
+
+.add_dog {
+    margin: auto;
+    padding: 10px;
+    width: 60%;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.add_dog * {
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+.add_dog input[type="text"],
+.add_dog input[type="number"],
+.add_dog input[type="file"]{
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 20%;
+}
+
+.add_dog textarea {
+    text-align: left;
+    width: 20%;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
