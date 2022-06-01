@@ -343,7 +343,7 @@ footer * {
 
 .add_dog input[type="text"],
 .add_dog input[type="number"],
-.add_dog input[type="file"]{
+.add_dog input[type="file"] {
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
@@ -366,90 +366,115 @@ footer * {
     overflow: auto;
     border-radius: 6px;
     border: 1px solid #827397;
-  }
-  
-  .table-wrapper table {
+}
+
+.table-wrapper table {
     border-spacing: 0;
     border-collapse: collapse;
     border-style: hidden;
-  
-    width:100%;
+
+    width: 100%;
     max-width: 100%;
-  }
-  
-  .table-wrapper table th, .table-wrapper table td {
+}
+
+.table-wrapper table th,
+.table-wrapper table td {
     padding: 20px;
-  }
-  .table-wrapper table tr {
+}
+
+.table-wrapper table tr {
     border: 1px solid #CCCCCC;
     background-color: #827397;
-  }
+}
 
-  .table-wrapper table th {
-      background-color: #4D4C7D;
-      color: #F23084;
-      text-shadow: 1px 2px 3px black;
-  }
-  .table-wrapper table td a .borrar {
-      background-color: white;
-      border-radius: 5px;
-      padding: 4px;
-      border: 1px solid black;
+.table-wrapper table th {
+    background-color: #4D4C7D;
+    color: #F23084;
+    text-shadow: 1px 2px 3px black;
+}
+
+.table-wrapper table td a .borrar {
+    background-color: white;
+    border-radius: 5px;
+    padding: 4px;
+    border: 1px solid black;
     color: red;
-  }
-  .table-wrapper table td a .editar {
+}
+
+.table-wrapper table td a .editar {
     background-color: white;
     border-radius: 5px;
     border: 1px solid black;
     padding: 4px;
-color: green;
-  }
+    color: green;
+}
 
-  .table-wrapper table a i:hover {
-      background-color: #F23084;
-      color: black
-  }
+.table-wrapper table a i:hover {
+    background-color: #F23084;
+    color: black
+}
 
-  .table-wrapper table a:hover {
+.table-wrapper table a:hover {
     text-decoration: none;
-  }
+}
 
-  .table-wrapper table tr:nth-child(2n+1) {
-      background-color: #efebe9;
-  }
- /*****************/
+.table-wrapper table tr:nth-child(2n+1) {
+    background-color: #efebe9;
+}
 
-  /** FORMS **/
+.table-actions {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-actions .button-primary {
+    padding: 0 10px;
+    height: 35px
+}
+
+.table-dog-pìcture{
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+} 
+
+/*****************/
+
+/** FORMS **/
 .form-wrapper {
     background-color: #efebe9;
     border-radius: 6px;
     border: 1px solid #827397;
     padding: 30px;
 }
-  form {
+
+form {
     display: flex;
     flex-direction: column;
-  }
-  .form-field {
-      margin: 10px 0;
-  }
+}
 
-  /*****************/
+.form-field {
+    margin: 10px 0;
+}
 
-  .main-page .content .row .dog-image {
+/*****************/
+
+.main-page .content .row .dog-image {
     background-size: cover;
     height: 300px;
     border-radius: 10px;
-  }
+}
 
-  .main-page .content .row p {
-      margin: 10px 0;
-  }
+.main-page .content .row p {
+    margin: 10px 0;
+}
 
-  .main-page .content .row ul li {
-      background-color: #4d4c7d;
-  }
+.main-page .content .row ul li {
+    background-color: #4d4c7d;
+}
 
-  .main-page .content .row ul li * {
-      color: white;
-  }
+.main-page .content .row ul li * {
+    color: white;
+}

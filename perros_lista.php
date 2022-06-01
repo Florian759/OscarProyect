@@ -21,27 +21,32 @@ $select = "SELECT pr.*, us.nombre as nombre_usuario, us.apellidos as apellidos_u
 $query = mysqli_query($conexion, $select);
 
 include_once("./assets/core/header.php") ?>
-<div class="main-page">
+<div class="main-page" id="perros-lista">
     <div class="content">
       <div>
+      <h4>Perros</h4>
+      <div class="table-actions">
       <?php 
         echo '
+        <div>
+        <label>Estado:</label>
 				  <select name="filter" id="filter">
 					  <option value="0" ' . (($filter =='0' || $filter =='')?'selected':'') . '>Todos</option>
             <option value="1" ' . (($filter =='1')?'selected':'') . '>Adoptados</option>
 					  <option value="2" ' . (($filter =='2')?'selected':'') . '>Sin adoptar</option>
 				  </select>
+          </div>
         '
       ?>
-
+      <button class="button-primary">Añadir <i class="icon-plus-sign"></i></button>
       </div>
       <div class="table-wrapper">
         <table>
             <tr>
+                <th>Foto</th>
                 <th>Nombre</th>
                 <th>Edad</th>
                 <th>Raza</th>
-                <th>Foto</th>
                 <th>Adoptado por</th>
                 <th></th>
                 <th></th>
@@ -51,10 +56,10 @@ include_once("./assets/core/header.php") ?>
 			while ($row = mysqli_fetch_assoc($query)) {
 				echo
 				'<tr>
+            <td><div class="table-dog-pìcture" style="background-image: url('. $row["foto"] .');"></div></td>
             <td>' . $row["nombre"] . '</td>
             <td>' . $row["edad"] . '</td>
             <td>' . $row["nombre_raza"] . '</td>
-            <td>' . $row["foto"] . '</td>
             <td>' . $row["nombre_usuario"] . ' ' . $row["apellidos_usuario"] . '</td>
             <td><a href="./perros_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
             <td><a href="./perros_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
@@ -66,6 +71,7 @@ include_once("./assets/core/header.php") ?>
     </div>
     </div>
 </div>
+    </div>
 	<footer>
 		<p>Oscar Gonzalez</p>
 	</footer>

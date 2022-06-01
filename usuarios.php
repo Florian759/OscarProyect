@@ -8,6 +8,11 @@ $query = mysqli_query($conexion, $select);
 include_once("./assets/core/header.php") ?>
 <div class="main-page">
     <div class="content">
+        <div>
+        <div class="table-actions">
+      <div><h4>Usuarios</h4></div>
+      <button class="button-primary">Añadir <i class="icon-plus-sign"></i></button>
+      </div>
     <div class="table-wrapper">
         <table>
             <tr>
@@ -34,6 +39,7 @@ include_once("./assets/core/header.php") ?>
             
 			?>
         </table>
+        </div>
         </div>
     </div>
 </div>
