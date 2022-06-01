@@ -37,14 +37,6 @@ if ($_SESSION != null && $_SESSION["usuario"] != null) {
         <a href="index.php">
             <img src="./assets/images/pata.png" alt="Logo" />
         </a>
-        etyjhrtgrefrte
-        <?php
-
-
-        echo $userID 
-
-
-        ?>
     </div>
     <nav>
         <a href="index.php">Home</a>
