@@ -6,6 +6,12 @@ $filter = trim($_GET["filter"]);
 
 $filterSQL = "";
 
+if ($filter =="1") {
+  $filterSQL = " WHERE us.id IS NOT NULL";
+} elseif ($filter =="2") {
+  $filterSQL = " WHERE us.id IS NULL";
+}
+
 $select = "SELECT pr.*, us.nombre as nombre_usuario, us.apellidos as apellidos_usuario
            FROM adopciones ad 
            LEFT JOIN usuarios us ON  ad.usuario_id = us.id 
@@ -14,18 +20,16 @@ $select = "SELECT pr.*, us.nombre as nombre_usuario, us.apellidos as apellidos_u
 
 $query = mysqli_query($conexion, $select);
 
-
-
 include_once("./assets/core/header.php") ?>
 <div class="main-page">
     <div class="content">
       <div>
       <?php 
         echo '
-				  <select name="filter" id="filter" value="1">
-					  <option value="">Todos</option>
-            <option value="1">Adoptados</option>
-					  <option value="2">Sin adoptar</option>
+				  <select name="filter" id="filter">
+					  <option value="0" ' . (($filter =='0' || $filter =='')?'selected':'') . '>Todos</option>
+            <option value="1" ' . (($filter =='1')?'selected':'') . '>Adoptados</option>
+					  <option value="2" ' . (($filter =='2')?'selected':'') . '>Sin adoptar</option>
 				  </select>
         '
       ?>
