@@ -30,13 +30,14 @@
 					<?php 
 					while($row = mysqli_fetch_assoc($query)){
 						echo 
-						'<a href="./perro.php?id=' . $row["id"] .'">
-							<li>
-								<img src="' . $row["foto"] . '" />
+						
+						'<li>
+						<a href="./perro.php?id=' . $row["id"] .'">
+							<div class="dog-image" style="background-image: url('. $row["foto"] .');"></div>
 								<p class="dog-name">' . $row["nombre"] . '</p>
 								<span>' . $row["nombre_raza"] . '</span>
-							</li>
-						</a>';
+								</a></li>
+						';
 					}
 					
 					?>

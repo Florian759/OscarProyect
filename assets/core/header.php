@@ -67,9 +67,7 @@ if ($_SESSION != null && $_SESSION["usuario"] != null) {
             </div>';
     } else {
         echo '<div class="loginAndRegister">
-                <ul>
-                    <li class="button-secondary"><a href="cierre.php">Cerrar sesión</a></li>
-                </ul>
+                <button class="button-primary"><a href="cierre.php">Cerrar sesión</a></button>
             </div>';
     }
 

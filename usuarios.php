@@ -8,6 +8,7 @@ $query = mysqli_query($conexion, $select);
 include_once("./assets/core/header.php") ?>
 <div class="main-page">
     <div class="content">
+    <div class="table-wrapper">
         <table>
             <tr>
                 <th>Nombre</th>
@@ -23,16 +24,17 @@ include_once("./assets/core/header.php") ?>
 				echo
 				'<tr>
                     <td>' . $row["nombre"] . '</td>
-                    <td>' . $row["apellidos"] . '</td>
-                    <td>' . $row["telefono"] . '</td>
-                    <td>' . $row["email"] . '</td>
-                    <td><a href="./editUser.php?id=' . $row["id"] . '" ><i class="icon-pencil"></i></a></td>
-                    <td><a href="./deleteUser.php?id=' . $row["id"] . '" ><i class="icon-trash"></i></a></td>
+                    <td>' . $row["nombre"] . '</td>
+                    <td>' . $row["nombre"] . '</td>
+                    <td>' . $row["nombre"] . '</td>
+                    <td><a href="./editUser.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
+                    <td><a href="./deleteUser.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
                 </tr>';
 			}
             
 			?>
         </table>
+        </div>
     </div>
 </div>
 	<footer>

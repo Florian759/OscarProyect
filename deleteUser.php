@@ -1,7 +1,6 @@
 <?php
 
     require_once("./assets/core/connection.php");
-    include_once("./assets/core/header.php");
 
     $id = $_REQUEST["id"];
 

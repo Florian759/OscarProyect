@@ -35,6 +35,7 @@ include_once("./assets/core/header.php") ?>
       ?>
 
       </div>
+      <div class="table-wrapper">
         <table>
             <tr>
                 <th>Nombre</th>
@@ -55,14 +56,14 @@ include_once("./assets/core/header.php") ?>
             <td>' . $row["nombre_raza"] . '</td>
             <td>' . $row["foto"] . '</td>
             <td>' . $row["nombre_usuario"] . ' ' . $row["apellidos_usuario"] . '</td>
-            <td></td>
-            <td><a href="./perros_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil"></i></a></td>
-            <td><a href="./perros_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash"></i></a></td>
+            <td><a href="./perros_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
+            <td><a href="./perros_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
         </tr>';
 			}
             
 			?>
         </table>
+    </div>
     </div>
 </div>
 	<footer>
