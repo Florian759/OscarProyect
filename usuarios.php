@@ -11,7 +11,7 @@ include_once("./assets/core/header.php") ?>
         <div>
         <div class="table-actions">
       <div><h4>Usuarios</h4></div>
-      <button class="button-primary">Añadir <i class="icon-plus-sign"></i></button>
+      <button class="button-primary" id="addUser">Añadir <i class="icon-plus-sign"></i></button>
       </div>
     <div class="table-wrapper">
         <table>
@@ -46,6 +46,14 @@ include_once("./assets/core/header.php") ?>
 	<footer>
 		<p>Oscar Gonzalez</p>
 	</footer>
+
+    <script type="text/javascript">
+        const selectElement = document.getElementById('addUser');
+
+        selectElement.addEventListener('click', (event) => {
+            window.location.href = `usuario_añadir.php`;
+        });
+    </script>
 </body>
 
 </html>

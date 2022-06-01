@@ -80,7 +80,6 @@ include_once("./assets/core/header.php") ?>
     const selectElement = document.getElementById('filter');
 
     selectElement.addEventListener('change', (event) => {
-        console.log("papata");
         window.location.href = `perros_lista.php?filter=${event.target.value}`;
     });
   </script>
