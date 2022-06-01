@@ -3,7 +3,12 @@
 
 	require_once("./assets/core/connection.php");
 
-	$select = "SELECT r.nombre AS nombre_raza, p.nombre, p.edad, p.ID, p.foto, p.description FROM perros p INNER JOIN razas r ON r.ID = p.raza";
+		$select = "SELECT pr.*, us.id as id_usuario
+							 FROM adopciones ad 
+							 LEFT JOIN usuarios us ON ad.usuario_id = us.id 
+							 RIGHT JOIN (SELECT pe.*, ra.nombre as nombre_raza FROM perros pe INNER JOIN razas ra ON pe.raza = ra.id) pr ON AD.perro_id = pr.id
+							 WHERE us.id IS NULL";
+
 	$query = mysqli_query($conexion, $select);
 
 ?>
@@ -20,13 +25,12 @@
 <?php include_once("./assets/core/header.php") ?>
 	<div class="main-page">
 		<div class="content">
-
 			<div class="row">
 				<ul>
 					<?php 
 					while($row = mysqli_fetch_assoc($query)){
 						echo 
-						'<a href="./perro.php?id=' . $row["ID"] .'">
+						'<a href="./perro.php?id=' . $row["id"] .'">
 							<li>
 								<img src="' . $row["foto"] . '" />
 								<p class="dog-name">' . $row["nombre"] . '</p>

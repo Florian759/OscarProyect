@@ -40,18 +40,23 @@ if ($_SESSION != null && $_SESSION["usuario"] != null) {
     </div>
     <nav>
         <a href="index.php">Home</a>
-        <a href="conocenos.php">Conócenos</a>
-        <a href="contacto.php">Contacto</a>
         <?php
 
         if ($userID != null) {
             if ($isAdmin) {
-                echo '<a href="anadir_perro.php">Añadir perro</a>';
+                // echo '<a href="anadir_perro.php">Añadir perro</a>';
+                echo '<a href="usuarios.php">Usuarios</a>';
+                echo '<a href="perros_lista.php">Perros</a>';
+                echo '<a href="razas_lista.php">Razas</a>';
+                // echo '<a href="adopciones.php">Adopciones</a>';
                 echo '<a href="cambiar_texto.php">Cambiar configuración</a>';
             }
         }
 
         ?>
+        <a href="conocenos.php">Conócenos</a>
+        <a href="contacto.php">Contacto</a>
+
     </nav>
     <?php
 
