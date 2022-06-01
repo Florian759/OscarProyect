@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-06-2022 a las 18:13:44
+-- Tiempo de generación: 01-06-2022 a las 19:18:23
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `adopciones`;
 CREATE TABLE IF NOT EXISTS `adopciones` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_id` int(11) NOT NULL,
   `perro_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_perro` (`perro_id`),
   KEY `FK_usuario` (`usuario_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `adopciones`
@@ -100,17 +100,17 @@ INSERT INTO `perros` (`id`, `nombre`, `description`, `raza`, `edad`, `foto`) VAL
 
 DROP TABLE IF EXISTS `razas`;
 CREATE TABLE IF NOT EXISTS `razas` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `razas`
 --
 
-INSERT INTO `razas` (`ID`, `nombre`) VALUES
-(1, 'pitbull'),
+INSERT INTO `razas` (`id`, `nombre`) VALUES
+(1, 'Pitbull'),
 (2, 'akita');
 
 -- --------------------------------------------------------
@@ -137,8 +137,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `password`, `isadmin`) VALU
 (1, 'ADMIN', 'sin apellidos', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 1),
 (11, 'UBU', '', 'ubu', 0),
 (12, 'UBU', '', 'ubu', 0),
-(14, '', '', 'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e', 0),
-(15, 'intento', '', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 0),
+(15, 'intento2', '', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 0),
 (16, 'testing', '', '521b9ccefbcd14d179e7a1bb877752870a6d620938b28a66a107eac6e6805b9d0989f45b5730508041aa5e710847d439ea74cd312c9355f1f2dae08d40e41d50', 1);
 
 --
@@ -156,7 +155,7 @@ ALTER TABLE `adopciones`
 -- Filtros para la tabla `perros`
 --
 ALTER TABLE `perros`
-  ADD CONSTRAINT `perros_ibfk_1` FOREIGN KEY (`raza`) REFERENCES `razas` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `perros_ibfk_1` FOREIGN KEY (`raza`) REFERENCES `razas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
