@@ -38,7 +38,7 @@ include_once("./assets/core/header.php") ?>
           </div>
         '
       ?>
-      <button class="button-primary">Añadir <i class="icon-plus-sign"></i></button>
+      <button class="button-primary" id="addDog">Añadir <i class="icon-plus-sign"></i></button>
       </div>
       <div class="table-wrapper">
         <table>
@@ -79,16 +79,15 @@ include_once("./assets/core/header.php") ?>
 
   <script type="text/javascript">
     const selectElement = document.getElementById('filter');
-    // const selectElement2 = document.getElementById('addUser');
+    const selectElement2 = document.getElementById('addDog');
 
     selectElement.addEventListener('change', (event) => {
         window.location.href = `perros_lista.php?filter=${event.target.value}`;
     });
 
-
-    // selectElement.addEventListener('click', (event) => {
-    //     window.location.href = `usuario_añadir.php`;
-    // });
+    selectElement2.addEventListener('click', (event) => {
+        window.location.href = `perro_añadir.php`;
+    });
   </script>
 </body>
 
