@@ -20,20 +20,22 @@ include_once("./assets/core/header.php") ?>
                 <th>Apellido</th>
                 <th>Telefono</th>
                 <th>Email</th>
+                <th>Admin</th>
                 <th></th>
                 <th></th>
             <tr>
-                <?php
+            <?php
                
 			while ($row = mysqli_fetch_assoc($query)) {
 				echo
 				'<tr>
                     <td>' . $row["nombre"] . '</td>
-                    <td>' . $row["nombre"] . '</td>
-                    <td>' . $row["nombre"] . '</td>
-                    <td>' . $row["nombre"] . '</td>
-                    <td><a href="./editUser.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
-                    <td><a href="./deleteUser.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
+                    <td>' . $row["apellidos"] . '</td>
+                    <td>' . $row["telefono"] . '</td>
+                    <td>' . $row["email"] . '</td>
+                    <td>' . ($row["isadmin"] == "1" ? "Si": "No") . '</td>
+                    <td><a href="./usuario_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
+                    <td><a href="./usuario_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
                 </tr>';
 			}
             

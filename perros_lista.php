@@ -12,7 +12,7 @@ if ($filter =="1") {
   $filterSQL = " WHERE us.id IS NULL";
 }
 
-$select = "SELECT pr.*, us.nombre as nombre_usuario, us.apellidos as apellidos_usuario
+$select = "SELECT pr.*, us.nombre as nombre_usuario, us.apellidos as apellidos_usuario, ad.id as adopcion_id
            FROM adopciones ad 
            LEFT JOIN usuarios us ON  ad.usuario_id = us.id 
            RIGHT JOIN (SELECT pe.*, ra.nombre as nombre_raza FROM perros pe INNER JOIN razas ra ON pe.raza = ra.id) pr ON AD.perro_id = pr.id 
@@ -61,8 +61,9 @@ include_once("./assets/core/header.php") ?>
             <td>' . $row["edad"] . '</td>
             <td>' . $row["nombre_raza"] . '</td>
             <td>' . $row["nombre_usuario"] . ' ' . $row["apellidos_usuario"] . '</td>
-            <td><a href="./perros_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
-            <td><a href="./perros_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
+            <td><a href="./perro_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
+            <td><a href="./perro_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
+            <td><a href="./perro_borrar_adopcion.php?id=' . $row["adopcion_id"] . '" ><i class="icon-trash borrar"></i></a></td>
         </tr>';
 			}
             
@@ -78,10 +79,16 @@ include_once("./assets/core/header.php") ?>
 
   <script type="text/javascript">
     const selectElement = document.getElementById('filter');
+    // const selectElement2 = document.getElementById('addUser');
 
     selectElement.addEventListener('change', (event) => {
         window.location.href = `perros_lista.php?filter=${event.target.value}`;
     });
+
+
+    // selectElement.addEventListener('click', (event) => {
+    //     window.location.href = `usuario_añadir.php`;
+    // });
   </script>
 </body>
 

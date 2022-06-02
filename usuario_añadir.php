@@ -12,6 +12,10 @@ include_once("./assets/core/header.php") ?>
 						<input type="text" name="nombre" id="nombre">
             <label for="nombre">Apellidos: </label>
             <input type="text" name="apellidos" id="apellidos">
+            <label for="nombre">Telefono: </label>
+						<input type="text" name="telefono" id="telefono">
+						<label for="nombre">Email: </label>
+						<input type="text" name="email" id="email">
             <label for="nombre">Password: </label>
             <input type="text" name="password" id="password">
             <label for="nombre">Admin: </label>

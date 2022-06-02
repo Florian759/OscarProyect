@@ -21,7 +21,7 @@ $isAdmin = false;
 
 if ($_SESSION != null && $_SESSION["usuario"] != null) {
     $userID = $_SESSION["usuario"];
-    $select = "SELECT * FROM usuarios WHERE ID LIKE {$userID}";
+    $select = "SELECT * FROM usuarios WHERE id LIKE {$userID}";
     $query_userdata = mysqli_query($conexion, $select);
 
     while ($row = mysqli_fetch_assoc($query_userdata)) {
@@ -44,11 +44,9 @@ if ($_SESSION != null && $_SESSION["usuario"] != null) {
 
         if ($userID != null) {
             if ($isAdmin) {
-                // echo '<a href="anadir_perro.php">Añadir perro</a>';
                 echo '<a href="usuarios.php">Usuarios</a>';
                 echo '<a href="perros_lista.php">Perros</a>';
                 echo '<a href="razas_lista.php">Razas</a>';
-                // echo '<a href="adopciones.php">Adopciones</a>';
                 echo '<a href="cambiar_texto.php">Cambiar configuración</a>';
             }
         }

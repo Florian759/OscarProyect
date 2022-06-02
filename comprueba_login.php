@@ -36,6 +36,8 @@
             session_start();
             
             $_SESSION["usuario"] = $row["id"];
+
+            echo $_SESSION["usuario"];
             
             header("Location:index.php");
         }
