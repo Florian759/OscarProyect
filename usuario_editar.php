@@ -19,7 +19,6 @@ include_once("./assets/core/header.php") ?>
 			';
                             
 					while ($row = mysqli_fetch_assoc($query)) {
-						echo 'patata' + ($row["isadmin"] == "1" ? "1": "0");
 						echo
 						'
 						<div class="form-field">
@@ -32,7 +31,7 @@ include_once("./assets/core/header.php") ?>
 							<label for="nombre">Email: </label>
 							<input type="text" name="email" id="email" value="'. $row["email"]. '">
 							<label for="nombre">Admin: </label>
-							<input type="checkbox" name="admin" id="admin" checked="'. ($row["isadmin"] == "1" ? "1": "0"). '">
+							<input type="checkbox" name="admin" id="admin" '. ($row["isadmin"] == "1" ? "checked": ""). '>
 						</div>
 						';
 					}

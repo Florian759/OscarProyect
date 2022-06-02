@@ -12,10 +12,11 @@ if ($filter =="1") {
   $filterSQL = " WHERE us.id IS NULL";
 }
 
-$select = "SELECT pr.*, us.nombre as nombre_usuario, us.apellidos as apellidos_usuario, ad.id as adopcion_id
-           FROM adopciones ad 
-           LEFT JOIN usuarios us ON  ad.usuario_id = us.id 
-           RIGHT JOIN (SELECT pe.*, ra.nombre as nombre_raza FROM perros pe INNER JOIN razas ra ON pe.raza = ra.id) pr ON AD.perro_id = pr.id 
+$select = "SELECT pr.*, usu.* FROM (SELECT pe.*, ra.nombre as nombre_raza FROM perros pe LEFT JOIN razas ra ON pe.raza = ra.id) pr
+          LEFT JOIN (
+            SELECT us.nombre as nombre_usuario, us.apellidos as apellidos_usuario, ad.id as adopcion_id, ad.perro_id FROM adopciones ad 
+            INNER JOIN usuarios us ON ad.usuario_id = us.id
+          ) usu ON usu.perro_id = pr.id
           {$filterSQL} ";
 
 $query = mysqli_query($conexion, $select);
@@ -63,7 +64,6 @@ include_once("./assets/core/header.php") ?>
             <td>' . $row["nombre_usuario"] . ' ' . $row["apellidos_usuario"] . '</td>
             <td><a href="./perro_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
             <td><a href="./perro_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
-            <td><a href="./perro_borrar_adopcion.php?id=' . $row["adopcion_id"] . '" ><i class="icon-trash borrar"></i></a></td>
         </tr>';
 			}
             
