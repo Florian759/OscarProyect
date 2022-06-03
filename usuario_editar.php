@@ -1,13 +1,17 @@
 <?php
+	require_once("./assets/core/connection.php");
 
-require_once("./assets/core/connection.php");
+	$id = $_REQUEST["id"];
 
-$id = $_REQUEST["id"];
+	$select = "SELECT * FROM usuarios WHERE ID LIKE {$id}";
+	$query = mysqli_query($conexion, $select);
 
-$select = "SELECT * FROM usuarios WHERE ID LIKE {$id}";
-$query = mysqli_query($conexion, $select);
-
-include_once("./assets/core/header.php") ?>
+	include_once("./assets/core/header.php");
+	
+	if($isAdmin == null || $isAdmin == false){
+		header('Location: index.php');
+	}
+?>
 <div class="main-page">
     <div class="content">
 	<?php  
@@ -15,7 +19,7 @@ include_once("./assets/core/header.php") ?>
 	
 	echo
 	'		<div class="form-wrapper">
-            <form action="usuario_editar_salvar.php?id='.$id.'" method="POST">
+            <form action="usuario_editar_logic.php?id='.$id.'" method="POST">
 			';
                             
 					while ($row = mysqli_fetch_assoc($query)) {

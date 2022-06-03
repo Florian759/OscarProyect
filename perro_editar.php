@@ -1,19 +1,31 @@
 <?php
+	require_once("./assets/core/connection.php");
 
-require_once("./assets/core/connection.php");
+	$id = $_REQUEST["id"];
 
-$id = $_REQUEST["id"];
+	$select = "SELECT pe.*, ad.usuario_id FROM perros pe LEFT JOIN adopciones ad ON ad.perro_id = pe.id  WHERE pe.id LIKE {$id}";
+	$query = mysqli_query($conexion, $select);
 
-$select = "SELECT pe.*, ad.usuario_id FROM perros pe LEFT JOIN adopciones ad ON ad.perro_id = pe.id  WHERE pe.id LIKE {$id}";
-$query = mysqli_query($conexion, $select);
+	$select_razas = "SELECT * FROM razas";
+	$query_razas = mysqli_query($conexion, $select_razas);
 
-$select_razas = "SELECT * FROM razas";
-$query_razas = mysqli_query($conexion, $select_razas);
+	$select_usuarios = "SELECT * FROM usuarios";
+	$query_usuarios = mysqli_query($conexion, $select_usuarios);
 
-$select_usuarios = "SELECT * FROM usuarios";
-$query_usuarios = mysqli_query($conexion, $select_usuarios);
+	include_once("./assets/core/header.php");
 
-include_once("./assets/core/header.php") ?>
+	if($isAdmin == null || $isAdmin == false){
+		header('Location: index.php');
+	}
+
+	if ($_GET["error"] != null && $_GET["error"] == 1) {
+		echo '
+				<div class="error_message">
+						<p>Error: Algún dato es invalido</p>                
+				</div>
+		';
+	}
+?>
 <div class="main-page">
     <div class="content">
 	<?php  
@@ -21,7 +33,7 @@ include_once("./assets/core/header.php") ?>
 	
 	echo
 	'		<div class="form-wrapper">
-            <form action="perro_editar_salvar.php?id='.$id.'" method="POST">
+            <form action="perro_editar_logic.php?id='.$id.'" method="POST" enctype="multipart/form-data">
 			';
                             
 					while ($row = mysqli_fetch_assoc($query)) {
@@ -42,8 +54,9 @@ include_once("./assets/core/header.php") ?>
 							<label for="edad">Edad: </label>
 							<input type="text" name="edad" id="edad" value="'. $row["edad"]. '">
 							
-							<label for="foto">Foto: </label>
-							<input type="text" name="foto" id="foto" value="'. $row["foto"]. '">
+							<label for="file">Foto: </label>
+							<img src="' . $row["foto"] . '"/><br>
+							<input type="file" name="file" />
 							<label for="adoptado">Adoptado por: </label>
 
 							<select name="adoptado" id="adoptado" >

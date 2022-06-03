@@ -1,11 +1,15 @@
 <?php
+    require_once("./assets/core/connection.php");
 
-require_once("./assets/core/connection.php");
+    $select = "SELECT * FROM usuarios";
+    $query = mysqli_query($conexion, $select);
 
-$select = "SELECT * FROM usuarios";
-$query = mysqli_query($conexion, $select);
+    include_once("./assets/core/header.php");
 
-include_once("./assets/core/header.php") ?>
+    if($isAdmin == null || $isAdmin == false){
+        header('Location: index.php');
+    }
+?>
 <div class="main-page">
     <div class="content">
         <div>
@@ -35,7 +39,7 @@ include_once("./assets/core/header.php") ?>
                     <td>' . $row["email"] . '</td>
                     <td>' . ($row["isadmin"] == "1" ? "Si": "No") . '</td>
                     <td><a href="./usuario_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
-                    <td><a href="./usuario_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
+                    <td><a href="./usuario_borrar_logic.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
                 </tr>';
 			}
             
@@ -53,7 +57,7 @@ include_once("./assets/core/header.php") ?>
         const selectElement = document.getElementById('addUser');
 
         selectElement.addEventListener('click', (event) => {
-            window.location.href = `usuario_añadir.php`;
+            window.location.href = `usuario_anadir.php`;
         });
     </script>
 </body>

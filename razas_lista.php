@@ -1,11 +1,15 @@
 <?php
+    require_once("./assets/core/connection.php");
 
-require_once("./assets/core/connection.php");
+    $select = "SELECT * FROM razas";
+    $query = mysqli_query($conexion, $select);
 
-$select = "SELECT * FROM razas";
-$query = mysqli_query($conexion, $select);
+    include_once("./assets/core/header.php");
 
-include_once("./assets/core/header.php") ?>
+    if($isAdmin == null || $isAdmin == false){
+        header('Location: index.php');
+    }
+?>
 <div class="main-page">
     <div class="content">
         <div>
@@ -27,7 +31,7 @@ include_once("./assets/core/header.php") ?>
                         '<tr>
                             <td>' . $row["nombre"] . '</td>
                             <td><a href="./razas_editar.php?id=' . $row["id"] . '" ><i class="icon-pencil editar"></i></a></td>
-                            <td><a href="./razas_borrar.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
+                            <td><a href="./razas_borrar_logic.php?id=' . $row["id"] . '" ><i class="icon-trash borrar"></i></a></td>
                         </tr>';
                     }
                     

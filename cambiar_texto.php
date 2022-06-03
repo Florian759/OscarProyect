@@ -42,7 +42,7 @@ require_once("./assets/core/connection.php");
     
                 <div class="ok_message">
                 
-                    <p>Perro añadido con exito</p>
+                    <p>texto modificado con éxito</p>
                 
                 </div>
     

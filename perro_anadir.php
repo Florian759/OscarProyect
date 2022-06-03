@@ -1,19 +1,29 @@
 <?php
+	require_once("./assets/core/connection.php");
+	include_once("./assets/core/header.php");
 
-require_once("./assets/core/connection.php");
-include_once("./assets/core/header.php");
 
+	$select = "SELECT * FROM razas";
 
-$select = "SELECT * FROM razas";
+	$query = mysqli_query($conexion, $select);
 
-$query = mysqli_query($conexion, $select);
+	if($isAdmin == null || $isAdmin == false){
+			header('Location: index.php');
+	}
 
+	if ($_GET["error"] != null && $_GET["error"] == 1) {
+		echo '
+				<div class="error_message">
+						<p>Error: Algún dato es invalido</p>                
+				</div>
+		';
+	}
 ?>
 
 <div class="main-page">
     <div class="content">
     	<div class="form-wrapper">
-        <form action="perro_añadir_salvar.php" method="POST">                         
+        <form action="perro_anadir_logic.php" method="POST" enctype="multipart/form-data" >                         
 					<div class="form-field">
 						<label for="nombre">Nombre: </label>
 						<input type="text" name="nombre" id="nombre">
@@ -29,11 +39,11 @@ $query = mysqli_query($conexion, $select);
 						<label for="edad">Edad: </label>
 						<input type="text" name="edad" id="edad">
 						<label for="foto">Foto: </label>
-						<input type="text" name="foto" id="foto">
+						<input type="file" name="file" required/>
 						<label for="descripcion">Descripción: </label>
 						<input type="text" name="descripcion" id="descripcion">
 					</div>
-          <input type="submit" name="enviar" value="guardar" class="button-primary more-padding">';
+          <input type="submit" name="enviar" value="guardar" class="button-primary more-padding">
         </form>
 			</div>
     </div>

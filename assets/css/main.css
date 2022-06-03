@@ -7,7 +7,7 @@ body {
 
 .main-header {
     background-color: #4D4C7D;
-    height: 8vh;
+    height: 15vh;
     width: 96%;
     padding: 0 2%;
     display: flex;
@@ -438,6 +438,7 @@ footer * {
     height: 100px;
     width: 100px;
     background-size: cover;
+    background-position: center;
 } 
 
 /*****************/
@@ -448,6 +449,9 @@ footer * {
     border-radius: 6px;
     border: 1px solid #827397;
     padding: 30px;
+}
+.form-wrapper img {
+    height: 100px
 }
 
 form {
@@ -463,6 +467,7 @@ form {
 
 .main-page .content .row .dog-image {
     background-size: cover;
+    background-position: center;
     height: 300px;
     border-radius: 10px;
 }
@@ -477,4 +482,9 @@ form {
 
 .main-page .content .row ul li * {
     color: white;
+}
+
+.main-page .content .row ul {
+    display: flex;
+    flex-wrap: wrap;
 }
